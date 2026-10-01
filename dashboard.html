@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BacheTrack | Panel de Control</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- CABECERA PRINCIPAL -->
+<header class="header-portal">
+
+  <div class="header-portal-inner">
+
+    <!-- MARCA -->
+    <div class="brand-official">
+
+      <div class="brand-emblem-gold">
+        <span>BT</span>
+      </div>
+
+      <div class="brand-text-single">
+        <h1>BacheTrack</h1>
+        <p>Sistema de Gestión de Infraestructura Vial</p>
+      </div>
+
+    </div>
+
+
+    <!-- USUARIO -->
+    <div class="dashboard-user">
+
+      <div class="dashboard-user-info">
+
+        <span class="dashboard-location" id="label-municipality">
+          Municipio de Orizaba, Veracruz
+        </span>
+
+        <span class="user-role-badge" id="badge-user-role">
+          <span id="text-user-role">
+            Cargando perfil...
+          </span>
+        </span>
+
+      </div>
+
+      <button
+        class="btn-logout"
+        onclick="cerrarSesion()"
+      >
+        Cerrar sesión
+      </button>
+    </div>
+  </div>
+</header>
+
+  <!-- MÉTRICAS Y RESUMEN INSTITUCIONAL -->
+  <section class="metrics-grid">
+    <div class="card-metric-gob">
+      <div class="metric-title">Total de Incidencias</div>
+      <div class="metric-val" id="total-reportes">0</div>
+    </div>
+    <div class="card-metric-gob">
+      <div class="metric-title">Reportes Pendientes</div>
+      <div class="metric-val" id="total-pendientes" style="color: #991B1B;">0</div>
+    </div>
+    <div class="card-metric-gob proceso">
+      <div class="metric-title">En Reparación (Cuadrillas)</div>
+      <div class="metric-val" id="total-proceso" style="color: #D97706;">0</div>
+    </div>
+    <div class="card-metric-gob reparado">
+      <div class="metric-title">Baches Atendidos / Reparados</div>
+      <div class="metric-val" id="total-atendidos" style="color: #065F46;">0</div>
+    </div>
+  </section>
+
+  <!-- GRID PRINCIPAL -->
+  <main class="main-dashboard">
+
+    <!-- PANEL DE MAPA -->
+    <section class="panel-gob">
+      <div class="panel-gob-header">
+        <h2 class="panel-gob-title">🗺️ Cobertura Vial</h2>
+        <button class="btn-gob-primary" style="width: auto; padding: 6px 12px; font-size: 12px;" onclick="cargarReportes()">
+          ↻ Actualizar Mapa
+        </button>
+      </div>
+      <div id="mapa" style="height: 480px; width: 100%;"></div>
+    </section>
+
+    <!-- PANEL DE REGISTRO / ACCIONES POR ROL -->
+    <section class="panel-gob">
+      <div class="panel-gob-header">
+        <h2 class="panel-gob-title" id="title-table-panel">Incidencias Viales</h2>
+        <button class="btn-gob-primary" id="btn-export" style="width: auto; padding: 6px 12px; font-size: 12px; background: var(--gob-verde);" onclick="exportarReportePDF()">
+          Exportar Reporte
+        </button>
+      </div>
+      <div class="table-container">
+        <table class="table-gob">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Evidencia</th>
+              <th>Descripción / Ubicación</th>
+              <th>Fecha</th>
+              <th>Estado</th>
+              <th>Gestión</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-reportes">
+            <tr>
+              <td colspan="6" style="text-align: center; padding: 24px; color: #6B7280;">
+                Cargando datos del sistema...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+  <!-- FOOTER -->
+  <footer class="footer-gob">
+
+  <div>
+    BacheTrack © 2026
+  </div>
+
+  <div id="ultima-sincro">
+    Última actualización: —
+  </div>
+
+</footer>
+
+  <!-- Leaflet -->
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+<!-- Supabase -->
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+</script>
+
+<!-- Tu código -->
+<script src="dashboard.js"></script>
+</body>
+
+</html>

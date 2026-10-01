@@ -1,0 +1,811 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  --gob-guinda: #2B2D30;
+  --gob-guinda-dark: #1D1F21;
+  --gob-guinda-light: #3D4044;
+
+  --gob-dorado: #F5C518;
+  --gob-dorado-hover: #D9AD00;
+
+  --gob-verde: #343A40;
+  --gob-gris-oscuro: #4B5563;
+
+  --bg-page: #F3F4F6;
+  --bg-card: #FFFFFF;
+
+  --border-color: #E1E4E8;
+  --border-focus: #F5C518;
+
+  --bg-page: #F3F4F6;
+  --bg-card: #FFFFFF;
+  --border-color: #E5E7EB;
+  --border-focus: #691C32;
+
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
+
+  /* Alertas / Estados */
+  --st-registrado: #991B1B;
+  --st-registrado-bg: #FEF2F2;
+  --st-proceso: #D97706;
+  --st-proceso-bg: #FFFBEB;
+  --st-reparado: #065F46;
+  --st-reparado-bg: #ECFDF5;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- CINTILLO INSTITUCIONAL FEDERAL ---- */
+.cintillo-gob,
+.top-bar-gob {
+  background-color: var(--gob-guinda-dark);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 8px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--gob-dorado);
+  letter-spacing: 0.3px;
+}
+
+.cintillo-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gob-logo-img {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+.cintillo-coat {
+  font-size: 14px;
+}
+
+.cintillo-title {
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.cintillo-links {
+  display: flex;
+  gap: 18px;
+}
+
+.cintillo-links a {
+  color: #E5E7EB;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.cintillo-links a:hover {
+  color: var(--gob-dorado);
+  text-decoration: underline;
+}
+
+.header-portal,
+.header-gob {
+  background: #242629;
+  color: #FFFFFF;
+  padding: 16px 36px;
+  border-bottom: 4px solid #F5C518;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.header-portal-inner,
+.header-brand-wrap {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-official {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-emblem-gold {
+  width: 46px;
+  height: 46px;
+
+  background: #F5C518;
+  color: #202124;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+
+  box-shadow: none;
+  flex-shrink: 0;
+}
+
+.brand-text-single {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-text-single h1 {
+  font-size: 21px;
+  font-weight: 800;
+
+  color: #FFFFFF !important;
+
+  letter-spacing: 1.5px;
+  line-height: 1.2;
+}
+
+.brand-text-single p {
+  font-size: 11px;
+  font-weight: 500;
+
+  color: #AEB4BC;
+
+  letter-spacing: 0.2px;
+  margin-top: 3px;
+}
+
+.brand-divider-gold {
+  width: 2px;
+  height: 42px;
+  background: linear-gradient(to bottom, transparent, var(--gob-dorado), transparent);
+  margin: 0 4px;
+}
+
+.brand-portal-title h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF !important;
+  line-height: 1.2;
+}
+
+.brand-portal-title p {
+  font-size: 11px;
+  color: #E5E7EB;
+  font-weight: 400;
+}
+
+.header-seal-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(188, 149, 92, 0.6);
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: #FFFFFF;
+}
+
+.seal-icon {
+  font-size: 20px;
+}
+
+.seal-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.seal-title {
+  font-size: 11px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.5px;
+}
+
+.seal-sub {
+  font-size: 10px;
+  color: #D4C19C;
+}
+
+.user-role-badge {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--gob-dorado);
+  color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---- LOGIN LAYOUT CENTRADO Y ELEGANTE ---- */
+.main-wrapper-centered {
+  max-width: 580px;
+  margin: 48px auto;
+  padding: 0 20px;
+  width: 100%;
+  flex: 1;
+}
+
+.login-card-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-top: 5px solid var(--gob-guinda);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.login-card-header {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border-color);
+  padding: 24px 28px 18px;
+  text-align: center;
+}
+
+.login-card-header h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--gob-guinda);
+}
+
+.login-card-header p {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.auth-tabs {
+  display: flex;
+  background: #F9FAFB;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.tab-btn:hover {
+  color: var(--gob-guinda);
+  background: #F3F4F6;
+}
+
+.tab-btn.active {
+  color: var(--gob-guinda);
+  background: #FFFFFF;
+  border-bottom-color: var(--gob-guinda);
+  font-weight: 700;
+}
+
+.login-card-body {
+  padding: 28px;
+}
+
+.auth-panel-content {
+  display: none;
+}
+
+.auth-panel-content.active {
+  display: block;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.form-group label span.req {
+  color: #DC2626;
+}
+
+.form-control {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-primary);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(105, 28, 50, 0.12);
+}
+
+.form-control.uppercase {
+  text-transform: uppercase;
+}
+
+.form-help {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* BOTONES */
+.btn-submit-gob,
+.btn-gob-primary {
+  background-color: var(--gob-guinda);
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.btn-submit-gob:hover,
+.btn-gob-primary:hover {
+  background-color: var(--gob-guinda-dark);
+}
+
+.btn-llave-official {
+  width: 100%;
+  padding: 12px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gob-verde);
+  background-color: #FFFFFF;
+  border: 2px solid var(--gob-verde);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-llave-official:hover {
+  background-color: var(--gob-verde);
+  color: #FFFFFF;
+}
+
+.alert-box {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.alert-box.visible { display: flex; }
+.alert-box.error { background-color: #FEF2F2; color: #991B1B; border: 1px solid #FCA5A5; }
+.alert-box.success { background-color: #ECFDF5; color: #065F46; border: 1px solid #6EE7B7; }
+
+.privacy-notice {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: justify;
+  line-height: 1.4;
+}
+
+/* ---- VENTANA EMERGENTE (MODAL BIENVENIDA) EN DASHBOARD ---- */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-welcome-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border-top: 6px solid var(--gob-guinda);
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
+  overflow: hidden;
+  animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalPop {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-welcome-header {
+  padding: 24px 28px 16px;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.emblem-circle {
+  width: 48px;
+  height: 48px;
+  background: var(--gob-dorado);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: var(--shadow-sm);
+}
+
+.modal-welcome-header h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--gob-guinda);
+}
+
+.modal-welcome-header p {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.modal-welcome-body {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.user-info-row {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.user-info-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.row-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.row-val {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.modal-welcome-footer {
+  padding: 18px 28px 24px;
+  background: #F9FAFB;
+  border-top: 1px solid var(--border-color);
+}
+
+/* ---- DASHBOARD LAYOUT ---- */
+.metrics-grid {
+  padding: 24px 32px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card-metric-gob {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-top: 4px solid var(--gob-guinda);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-metric-gob.proceso { border-top-color: var(--st-proceso); }
+.card-metric-gob.reparado { border-top-color: var(--st-reparado); }
+
+.metric-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-val {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--gob-guinda);
+  line-height: 1;
+  margin-top: 6px;
+}
+
+.main-dashboard {
+  padding: 24px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  flex: 1;
+}
+
+.panel-gob {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panel-gob-header {
+  background: #F9FAFB;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel-gob-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gob-guinda);
+}
+
+/* LEAFLET MAP */
+#mapa {
+  height: 480px;
+  width: 100%;
+  background-color: #E5E7EB;
+  z-index: 1;
+}
+
+/* TABLA */
+.table-container {
+  overflow-x: auto;
+  max-height: 480px;
+}
+
+.table-gob {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+.table-gob th {
+  position: sticky;
+  top: 0;
+  background: var(--gob-guinda-dark);
+  color: #FFFFFF;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  z-index: 10;
+}
+
+.table-gob td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.table-gob tr:hover {
+  background-color: #F9FAFB;
+}
+
+.badge-gob {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.badge-gob.registrado { background: var(--st-registrado-bg); color: var(--st-registrado); border: 1px solid var(--st-registrado); }
+.badge-gob.en_proceso, .badge-gob.en_reparacion { background: var(--st-proceso-bg); color: var(--st-proceso); border: 1px solid var(--st-proceso); }
+.badge-gob.reparado, .badge-gob.atendido { background: var(--st-reparado-bg); color: var(--st-reparado); border: 1px solid var(--st-reparado); }
+
+/* FOOTER */
+.footer-official,
+.footer-gob {
+  background-color: var(--gob-guinda-dark);
+  color: #FFFFFF;
+  border-top: 4px solid var(--gob-dorado);
+  margin-top: auto;
+}
+
+.footer-gob {
+  padding: 16px 32px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  color: #D4C19C;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 32px;
+  font-size: 12px;
+}
+
+.footer-col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gob-dorado);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.footer-col p { color: #D1D5DB; line-height: 1.6; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 8px; }
+.footer-col ul li a { color: #E5E7EB; text-decoration: none; }
+.footer-col ul li a:hover { color: var(--gob-dorado); }
+
+.footer-bottom {
+  background-color: #282828;
+  text-align: center;
+  padding: 14px 24px;
+  font-size: 11px;
+  color: var(--gob-dorado-hover);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .brand-official { flex-wrap: wrap; }
+  .header-seal-right { display: none; }
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  .main-dashboard { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .header-portal, .header-gob { flex-direction: column; align-items: flex-start; gap: 14px; padding: 16px; }
+  .metrics-grid { grid-template-columns: 1fr; padding: 16px; }
+  .main-dashboard { padding: 16px; }
+  .cintillo-gob, .top-bar-gob { flex-direction: column; gap: 4px; padding: 8px 16px; text-align: center; }
+}
+
+/* ---- USUARIO DEL DASHBOARD ---- */
+
+.dashboard-user {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.dashboard-user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.dashboard-location {
+  color: #AEB4BC;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.user-role-badge {
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+
+  padding: 0;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.btn-logout {
+  background: transparent;
+  color: #FFFFFF;
+
+  border: 1px solid #555A60;
+  border-radius: 6px;
+
+  padding: 9px 16px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s;
+}
+
+.btn-logout:hover {
+  background: #F5C518;
+  border-color: #F5C518;
+  color: #202124;
+}
